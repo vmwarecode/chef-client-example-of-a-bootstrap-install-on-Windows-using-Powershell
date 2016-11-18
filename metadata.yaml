@@ -1,0 +1,7 @@
+name: "auto-generated-pkg-1132c563-6318-4d02-a740-1b29d97168c9"
+productVersion: "7.1.0-SNAPSHOT"
+data:
+- locator: "composite-blueprint/ChefClientInstallWindows.yaml"
+  name: "ChefClientInstall-Windows"
+  description: "ChefClientInstall-Windows"
+exportTime: "2016-11-18T19:12:33.420Z"

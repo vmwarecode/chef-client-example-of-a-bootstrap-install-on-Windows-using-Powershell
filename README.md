@@ -1,1 +1,0 @@
-# chef-client-example-of-a-bootstrap-install-on-Windows-using-Powershell

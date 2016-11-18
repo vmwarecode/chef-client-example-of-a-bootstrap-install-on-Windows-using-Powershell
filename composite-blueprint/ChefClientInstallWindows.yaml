@@ -1,0 +1,71 @@
+id: ChefClientInstallWindows
+name: ChefClientInstall-Windows
+description: This will install the chef-client on a Windows machine
+status: PUBLISHED
+components:
+  chef-Windows:
+    type: Infrastructure.CatalogItem.Machine.Virtual.vSphere
+    data:
+      VirtualMachine.Admin.UseGuestAgent:
+        default: 'true'
+        required: false
+        secured: false
+        visible: false
+      VirtualMachine.Customize.WaitComplete:
+        default: 'true'
+        required: false
+        secured: false
+        visible: false
+      VirtualMachine.Software0.ScriptPath:
+        default: . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install
+        required: true
+        secured: false
+        visible: true
+      _cluster:
+        default: 1
+        max: 1
+        min: 1
+      action:
+        fixed: FullClone
+      allow_storage_policies:
+        fixed: false
+      blueprint_type:
+        fixed: '1'
+      cpu:
+        default: 1
+        max: 1
+        min: 1
+      disks:
+      - capacity: 40
+        custom_properties: null
+        id: 1479495547223
+        initial_location: ''
+        is_clone: true
+        label: Hard disk 1
+        storage_reservation_policy: ''
+        userCreated: false
+        volumeId: 0
+      max_network_adapters: {}
+      max_volumes: {}
+      memory:
+        default: 8192
+        max: 8192
+        min: 8192
+      provisioning_workflow:
+        fixed:
+          id: CloneWorkflow
+          label: CloneWorkflow
+      security_groups: []
+      security_tags: []
+      source_machine:
+        fixed:
+          id: 43d412aa-3451-4a11-9000-429685ccc649
+          label: windows2012R2-template
+      source_machine_name:
+        fixed: windows2012R2-template
+      storage:
+        default: 40
+        max: 40
+        min: 40
+layout:
+  chef-Windows: 0,0
